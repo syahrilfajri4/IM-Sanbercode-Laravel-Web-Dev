@@ -1,0 +1,3 @@
+Nama : Muhammad Syahril Fajri
+
+Motivasi saya mengikuti kelas laravel yaitu : Peluang Karir, banyak perusahaan mencari pengembang dengan keterampilan Laravel. Menguasai framework ini dapat membuka peluang kerja dan meningkatkan daya saing di pasar kerja. Dan harapan utama mungkin adalah memahami bagaimana Laravel bekerja dan bagaimana menggunakan fitur-fiturnya dengan efektif.
