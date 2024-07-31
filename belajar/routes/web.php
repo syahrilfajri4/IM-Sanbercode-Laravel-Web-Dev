@@ -19,3 +19,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/register', [BiodataController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [BiodataController::class, 'processRegister'])->name('process_register');
 Route::get('/welcome', [BiodataController::class, 'welcome'])->name('welcome');
+
+Route::get('/data-table', function () {
+    return view('page.data-table');
+});
+
+Route::get('/table', function () {
+    return view('page.table');
+});
