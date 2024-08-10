@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\CastController;
+use App\Http\Controllers\FilmController;
+use App\Http\Controllers\GenreController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\KritikController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +33,31 @@ Route::get('/table', function () {
     return view('page.table');
 });
 
+//middleware
+Route::middleware(['auth'])->group(function () {
+    //Route yang mengarah ke form input tambah genre
+    Route::get('/genre/create', [GenreController::class, 'create']);
+
+    //Route untuk mengirim inputan ke db table genre
+    Route::post('/genre', [GenreController::class, 'store']);
+
+    //Read data genre
+    //route untuk menampilkan semua data di table genre ke blade
+    Route::get('/genre', [GenreController::class, 'index']);
+
+    //Route untuk ambil detail data berdasarkan parameter id
+    Route::get('/genre/{id}', [GenreController::class, 'show']);
+
+    //Route untuk update data yang mengarah ke form input edit dgn nilai berdasarkan params id
+    Route::get('/genre/{id}/edit', [GenreController::class, 'edit']);
+    Route::put('/genre/{id}', [GenreController::class, 'update']);
+
+    //route delete data
+    Route::delete('/genre/{id}', [GenreController::class, 'destroy']);
+
+    Route::post('/kritik/{film_id}', [KritikController::class, 'store']);
+});
+
 
 //CRUD
 //Create Data Cast
@@ -51,3 +80,14 @@ Route::put('/cast/{id}', [CastController::class, 'update']);
 
 //route delete data
 Route::delete('/cast/{id}', [CastController::class, 'destroy']);
+
+
+//CRUD FILM
+Route::resource('film', FilmController::class);
+
+
+//CRUD 
+//Create Genre
+
+
+Auth::routes();
