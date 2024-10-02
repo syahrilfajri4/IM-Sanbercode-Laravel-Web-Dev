@@ -1,0 +1,48 @@
+/* html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+} */
+
+.table-wrapper {
+    max-height: 380px; /* Atur sesuai kebutuhan Anda */
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-wrapper thead th,
+.table-wrapper tfoot td {
+    position: sticky;
+    z-index: 1;
+    background-color: #1F497D; /* Warna background header dan footer */
+    color: #ffffff; /* Warna teks header dan footer */
+}
+
+.table-wrapper thead th {
+    top: 0;
+}
+
+.table-wrapper tfoot td {
+    bottom: 0;
+}
+
+.table-wrapper table tfoot {
+    margin: 0;
+    padding: 0;
+}
+
+.table-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.custom-table-wrapper {
+    max-height: 300px; /* Sesuaikan dengan tinggi yang diinginkan */
+}
+
+.highlight {
+    background-color: yellow;
+}
